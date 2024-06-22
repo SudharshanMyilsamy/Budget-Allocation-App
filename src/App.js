@@ -1,25 +1,25 @@
-import logo from './logo.svg';
+import React from 'react';
+import './App.css';
+import { AppProvider } from './context/AppContext';
+import Header from './components/Header';
+import Budget from './components/Budget';
+import ExpenseList from './components/ExpenseList';
+import AddExpenseForm from './components/AddExpenseForm';
+import CurrencyDropdown from './components/CurrencyDropdown';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppProvider>
+      <div className="container">
+        <Header />
+        <CurrencyDropdown />
+        <Budget />
+        <ExpenseList />
+        <AddExpenseForm />
+      </div>
+    </AppProvider>
   );
-}
+};
 
 export default App;
